@@ -18,8 +18,11 @@ First make sure you have the following tools installed on your machine:
 1. [uv](https://docs.astral.sh/uv/), a package and environment manager for Python
 2. [direnv](https://direnv.net), a tool for managing environment variables in your projects
 3. [mcptools](https://github.com/f/mcptools) (optional), a command line utility for interacting
-   with MCP servers
-4. These examples use OpenAI models for the Agent, so you will need an actve account and key
+   with MCP servers. This program is only needed if you want to test/debug the MCP server without
+   the chat application. It is really helpful for debugging your tools and making sure that the
+   expected metadata is being published by the MCP server. Note that the name of the program is
+   `mcpt` if you install via Homebrew on Mac and `mcptools` otherwise.
+5. These examples use OpenAI models for the Agent, so you will need an actve account and key
    from [here](https://platform.openai.com/api-keys).  Alternatively, you can use one of the
    other models supported by Pydantic.ai. In that case, you will have to set the model and key
    appropriately.
@@ -35,7 +38,7 @@ Once you have the prerequisites installed, do the following steps:
 If you have installed mcptools, you can connect to your MCP server and test it as follows:
 
 ```sh
-$ mcpt shell http://localhost:8000/mcp
+$ mcptools shell http://localhost:8000/mcp # use the command "mcpt" if you installed via Homebrew
 mcp> tools
 cpu_times
      Get Cpu Times Return system CPU time as a total across all cpus. Every attribute represents the
