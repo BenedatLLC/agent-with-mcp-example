@@ -1,0 +1,19 @@
+[project]
+name = "agent-with-mcp-example"
+version = "0.1.0"
+description = "Simple example of an Agent and a local MCP Server"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi[standard]>=0.115.12",
+    "fastapi-mcp>=0.3.4",
+    "psutil>=7.0.0",
+    "uvicorn>=0.34.3",
+    "pydantic-ai-slim[mcp,openai]>=0.2.15",
+    "gradio>=5.33.0",
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.11.13",
+]
